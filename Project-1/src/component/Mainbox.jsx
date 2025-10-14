@@ -23,6 +23,13 @@ function Mainbox() {
                 Category
               </button>
             </div>
+            <div className="h-8 mt-4">
+              <p className="text-gray-400">Also Available on:</p>
+              <div className="w-10 h-8 flex gap-4 mt-2">
+                <img src="../images/flipkart.png" alt="" />
+                <img src="../images/amazon.png" alt="" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-3/6 pt-16 pb-16 image-box">

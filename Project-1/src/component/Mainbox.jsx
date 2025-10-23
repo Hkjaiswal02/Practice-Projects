@@ -33,7 +33,7 @@ function Mainbox() {
           </div>
         </div>
         <div className="w-3/6 pt-16 pb-16 image-box">
-          <img src="../public/images/shoes.png" alt="" />
+          <img src="../images/shoes.png" alt="" />
         </div>
       </div>
     </>

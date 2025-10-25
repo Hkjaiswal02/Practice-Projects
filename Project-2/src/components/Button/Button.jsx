@@ -1,7 +1,7 @@
 import styles from "./Button.module.css";
-function Button({ text, icon }) {
+function Button({ text, icon, isOutline }) {
   return (
-    <button className={styles.primary_btn}>
+    <button className={isOutline ? styles.Outline_btn : styles.primary_btn}>
       {icon}
       {text}
     </button>

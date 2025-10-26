@@ -1,0 +1,22 @@
+.container {
+  min-height: 522px;
+  min-width: 1182px;
+  margin: auto;
+  display: flex;
+  gap: 5px;
+}
+.titleBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titleBox h1 {
+  font-size: 96px;
+  margin: 0;
+}
+.titleBox div {
+  display: flex;
+  justify-content: flex-end;
+}

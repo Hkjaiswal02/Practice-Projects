@@ -6,11 +6,15 @@
   padding: 18px 10px;
   min-height: 44px;
   min-width: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  border: 1px solid transparent;
   cursor: pointer;
+  transition: 0.4s background ease-in;
+}
+.primary_btn:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  transition: 0.3s background ease-in;
 }
 .Outline_btn {
   background-color: white;
@@ -19,7 +23,7 @@
   border-radius: 5px;
   padding: 18px 10px;
   min-height: 44px;
-  min-width: 472px;
+  min-width: 220px;
   display: flex;
   align-items: center;
   justify-content: center;

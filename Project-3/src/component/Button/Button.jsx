@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import styles from "./Button.module.css";
-function Button({ text, icon, isOutline }) {
+import { ToggleContext } from "../../App";
+function Button({ text, isOutline }) {
+  const { isToggled, toggle } = useContext(ToggleContext);
   return (
-    <button className={isOutline ? styles.Outline_btn : styles.primary_btn}>
-      {icon}
+    <button
+      className={isOutline ? styles.Outline_btn : styles.primary_btn}
+      onClick={toggle}
+    >
       {text}
     </button>
   );

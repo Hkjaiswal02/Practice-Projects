@@ -5,12 +5,14 @@ import HomePage from "./component/HomePage/HomePage";
 
 export const ToggleContext = createContext();
 function App() {
-  const [isToggled, setIsToggled] = useState(true);
+  const [isToggled, setIsToggled] = useState(false);
 
   const toggle = () => setIsToggled((prev) => !prev);
   return (
     <ToggleContext.Provider value={{ isToggled, toggle }}>
-      {isToggled ? <Gamepage /> : <HomePage />}
+      <div className={`page ${isToggled ? "show" : "hide"}`}>
+        {isToggled ? <Gamepage /> : <HomePage />}
+      </div>
     </ToggleContext.Provider>
   );
 }

@@ -1,20 +1,20 @@
 import styled from "styled-components";
-import { useState } from "react";
 
-function SelectButton() {
+function SelectButton({ error, seterror, selectedNumber, setSelectedNumber }) {
   const selectNo = [1, 2, 3, 4, 5, 6];
-  const [selectedNumber, setSelectedNumber] = useState();
-  console.log(selectedNumber);
 
   return (
     <>
       <NumberSelectorContainer>
+        {error && <p className="errormsg">You have not selected any number</p>}
         <div className="flex">
           {selectNo.map((val, i) => (
             <Button
               $isSelected={val === selectedNumber}
               key={i}
-              onClick={() => setSelectedNumber(val)}
+              onClick={() => {
+                seterror(false), setSelectedNumber(val);
+              }}
             >
               {val}
             </Button>
@@ -38,7 +38,12 @@ const NumberSelectorContainer = styled.div`
   }
   p {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
+  }
+  .errormsg {
+    color: red;
+    font-size: 24px;
+    font-weight: 400;
   }
 `;
 

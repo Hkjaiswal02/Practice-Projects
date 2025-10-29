@@ -4,3 +4,14 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
+.page {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.show {
+  transform: translateX(0);
+}
+
+.hide {
+  transform: translateX(-20px);
+}

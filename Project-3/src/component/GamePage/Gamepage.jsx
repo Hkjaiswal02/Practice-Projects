@@ -49,9 +49,23 @@ export default Gamepage;
 
 const Box = styled.main`
   padding-top: 72px;
+
   .top_section {
     display: flex;
     justify-content: space-around;
     align-items: end;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 40px;
+
+    .top_section {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
   }
 `;

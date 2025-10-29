@@ -39,3 +39,12 @@
   color: white;
   transition: 0.3s background ease-in;
 }
+
+@media (max-width: 768px) {
+  .primary_btn,
+  .Outline_btn {
+    min-width: 160px;
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+}

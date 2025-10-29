@@ -57,33 +57,46 @@ const DiceContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 0 16px;
 
   .button {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
+
   .dice {
     cursor: pointer;
   }
 
   .rollDice {
-    font-size: 24px;
+    font-size: clamp(16px, 4vw, 24px);
     font-weight: 500;
   }
+
   .rules {
     background-color: #fbf1f1;
-    width: 794px;
-    height: 208px;
-    margin: 64px 0;
+    width: 100%;
+    max-width: 794px;
+    height: auto;
+    margin: 40px 0;
     padding: 20px;
     text-align: left;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
+
   .rules div {
-    line-height: 30px;
+    line-height: 28px;
     font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .rules {
+      padding: 16px;
+      gap: 12px;
+    }
   }
 `;

@@ -21,6 +21,8 @@
     "nodemon": "^2.0.22"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.13"
+    "@types/cors": "^2.8.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }

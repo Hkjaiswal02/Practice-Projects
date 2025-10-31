@@ -9,7 +9,7 @@ app.use(cors());
 
 app.use("/images", express.static(path.join(__dirname, "../public/images")));
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   console.log(path.join(__dirname, "../public"));
   const foodData = [
     {

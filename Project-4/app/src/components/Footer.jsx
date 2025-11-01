@@ -13,10 +13,10 @@ const Footer = () => {
         </p>
         <ButtonGroup>
           <StoreButton>
-            <SiAppstore size={22} /> App Store
+            <SiAppstore size={21} /> App Store
           </StoreButton>
           <StoreButton>
-            <SiGoogleplay size={22} /> Google Play
+            <SiGoogleplay size={21} /> Google Play
           </StoreButton>
         </ButtonGroup>
       </DownloadSection>
@@ -111,6 +111,9 @@ export const DownloadSection = styled.div`
   h2 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    @media (max-width: 400px) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
@@ -120,6 +123,9 @@ export const DownloadSection = styled.div`
     span {
       color: #ff715b;
       font-weight: 600;
+    }
+    @media (max-width: 400px) {
+      font-size: 0.9rem;
     }
   }
 `;
@@ -146,6 +152,9 @@ export const StoreButton = styled.button`
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 10px #ff715b;
+  }
+  @media (max-width: 400px) {
+    font-size: 8px;
   }
 `;
 

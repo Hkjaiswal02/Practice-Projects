@@ -94,6 +94,10 @@ const FoodCard = styled.div`
       font-size: 12px;
     }
   }
+  @media (max-width: 500px) {
+    width: 320px;
+    height: 210px;
+  }
 `;
 const Button = styled.button`
   background-color: #ff3b30;

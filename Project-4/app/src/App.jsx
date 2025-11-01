@@ -154,14 +154,14 @@ const TopContainer = styled.section`
   }
   @media (max-width: 768px) {
     .search input {
-      width: 250px;
+      width: 200px;
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 400px) {
     .search input {
-      padding: 8px 15px;
-      font-size: 13px;
-      width: 150px;
+      padding: 4px 10px;
+      font-size: 8px;
+      width: 80px;
     }
   }
 `;
@@ -183,6 +183,12 @@ const Button = styled.button`
   &:hover {
     border: 1px solid #ea1d1d;
     color: #ea1d1d;
+  }
+  @media (max-width: 500px) {
+    height: 35px;
+    padding: 2px 12px;
+    font-size: 12px;
+    border-radius: 8px;
   }
 `;
 

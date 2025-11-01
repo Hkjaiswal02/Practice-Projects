@@ -7,6 +7,7 @@ import Foodmessage from "./components/Foodmessage";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import { FaShoppingCart } from "react-icons/fa";
+import Cart from "./components/Cart";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -15,6 +16,7 @@ const App = () => {
   const [filterdData, setFilteredData] = useState(null);
   const [selectedBtn, setSelecteBtn] = useState("all");
   const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     const fetchFoodData = async () => {
@@ -87,7 +89,7 @@ const App = () => {
       <Container>
         <TopContainer>
           <div className="logo">
-            <img src="/Image/logo1.png" alt="logo" />
+            <img src="/images/logo1.png" alt="logo" />
           </div>
 
           <RightSide>
@@ -98,7 +100,7 @@ const App = () => {
                 onChange={searchFood}
               />
             </div>
-            <FaShoppingCart />
+            <FaShoppingCart onClick={() => setShowCart((prev) => !prev)} />
             {cart.length > 0 && <span>{cart.length}</span>}
           </RightSide>
         </TopContainer>
@@ -106,7 +108,7 @@ const App = () => {
           {filterBtns.map((value) => (
             <Button
               key={value.name}
-              active={selectedBtn === value.type}
+              $active={selectedBtn === value.type}
               onClick={() => filterFood(value.type)}
             >
               {value.name}
@@ -115,6 +117,8 @@ const App = () => {
         </FilterContainer>
         <Foodmessage />
         <SearchResult data={filterdData} setCart={setCart} />
+
+        {showCart && <Cart cart={cart} setCart={setCart} />}
       </Container>
       <Footer />
     </>
@@ -153,6 +157,13 @@ const TopContainer = styled.section`
       width: 250px;
     }
   }
+  @media (max-width: 500px) {
+    .search input {
+      padding: 8px 15px;
+      font-size: 13px;
+      width: 150px;
+    }
+  }
 `;
 
 const FilterContainer = styled.section`
@@ -163,7 +174,7 @@ const FilterContainer = styled.section`
 const Button = styled.button`
   background-color: #252525;
   color: white;
-  border: 1px solid ${(props) => (props.active ? "#ea1d1d" : "transparent")};
+  border: 1px solid ${(props) => (props.$active ? "#ea1d1d" : "transparent")};
   height: 40px;
   padding: 6px 14px;
   font-size: 16px;

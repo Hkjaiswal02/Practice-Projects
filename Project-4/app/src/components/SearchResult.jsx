@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { BASE_URL } from "../App";
 function SearchResult({ data, setCart }) {
-  const Handleclick = (e) => {
-    setCart((prev) => [...prev, e.target.value]);
+  const Handleclick = (food) => {
+    setCart((prev) => [...prev, food]);
+    console.log(food);
   };
   return (
     <FoodCards>
@@ -18,7 +19,7 @@ function SearchResult({ data, setCart }) {
             </div>
             <Button
               onClick={(e) => {
-                Handleclick(e);
+                Handleclick(food);
               }}
             >
               ${food.price.toFixed(2)}

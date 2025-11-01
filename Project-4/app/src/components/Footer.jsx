@@ -24,7 +24,7 @@ const Footer = () => {
       <MainFooter>
         {/* Logo + About */}
         <FooterCol>
-          <img src="./Image/logo1.png" alt="" />
+          <img src="./images/logo1.png" alt="" />
           <p>
             Delicious food, anytime, anywhere. Bringing flavors from around the
             world straight to your table.

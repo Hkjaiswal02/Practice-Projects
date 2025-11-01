@@ -1,18 +1,16 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const path_1 = __importDefault(require("path"));
-const cors_1 = __importDefault(require("cors"));
-const app = (0, express_1.default)();
-app.use(express_1.default.json());
-app.use(express_1.default.urlencoded({ extended: true }));
-app.use((0, cors_1.default)());
-app.use("/images", express_1.default.static(path_1.default.join(__dirname, "../public/images")));
+import express from "express";
+import path from "path";
+import cors from "cors";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use("/images", express.static(path.join(__dirname, "../public/images")));
 app.get("/", (req, res) => {
-    console.log(path_1.default.join(__dirname, "../public"));
+    console.log(path.join(__dirname, "../public"));
     const foodData = [
         {
             name: "Boiled Egg",
@@ -59,7 +57,7 @@ app.get("/", (req, res) => {
     ];
     res.json(foodData);
 });
-app.listen(9000, () => {
-    console.log("Server is running on port 9000");
+const PORT = process.env.PORT || 9000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
-//# sourceMappingURL=index.js.map

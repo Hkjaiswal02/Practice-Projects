@@ -1,13 +1,17 @@
 import express from "express";
 import path from "path";
 import cors from "cors";
+import { fileURLToPath } from "url"; // 👈 Add this line
+
+// ✅ Fix __dirname for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
-
 app.use("/images", express.static(path.join(__dirname, "../public/images")));
 
 app.get("/", (req, res) => {

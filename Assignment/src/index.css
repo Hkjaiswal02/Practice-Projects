@@ -1,0 +1,149 @@
+/* index.css — light, neutral styling for the Data Table app */
+
+/* --- Reset / base --- */
+:root {
+  --max-width: 1100px;
+  --accent: #1976d2; /* default MUI primary */
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f5f7fb;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+}
+
+/* Container */
+.app-container {
+  max-width: var(--max-width);
+  margin: 28px auto;
+  padding: 20px;
+}
+
+/* Card like paper override for extra spacing */
+.mui-card {
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  padding: 12px;
+}
+
+/* Header area: title & controls */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.header-row .title {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+.header-row .controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Search input (MUI TextField is styled but we add spacing) */
+.search-field {
+  margin: 8px 12px;
+}
+
+/* Table container tweaks */
+.table-root {
+  overflow: auto;
+  border-radius: 8px;
+}
+
+/* Make table cells wrap gracefully and be vertically centered */
+.MuiTableCell-root {
+  white-space: normal !important; /* allow wrapping in MUI TableCell */
+  vertical-align: middle;
+  word-break: break-word;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Header styles */
+.MuiTableHead-root .MuiTableCell-root {
+  font-weight: 600;
+  color: #0b1220;
+  background: linear-gradient(
+    180deg,
+    rgba(243, 245, 249, 0.8),
+    rgba(255, 255, 255, 0.6)
+  );
+}
+
+/* Action column narrow width */
+.table-actions-cell {
+  width: 84px;
+  text-align: center;
+}
+
+/* Pagination area */
+.pagination-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 8px;
+}
+
+/* File input hidden but label styled */
+input[type="file"] {
+  display: none;
+}
+
+/* Button helper */
+.btn-link-like {
+  background: transparent;
+  border: 1px dashed rgba(1, 78, 162, 0.08);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Manage Columns modal: compact list */
+.manage-columns-list {
+  max-height: 40vh;
+  overflow: auto;
+  padding-right: 6px;
+}
+
+/* Small screens */
+@media (max-width: 720px) {
+  .header-row {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .app-container {
+    padding: 12px;
+    margin: 12px;
+  }
+
+  .table-actions-cell {
+    width: 56px;
+  }
+
+  .MuiTableCell-root {
+    font-size: 0.95rem;
+  }
+}

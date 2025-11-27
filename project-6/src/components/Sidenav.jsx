@@ -28,6 +28,7 @@ const Sidenav = () => {
         base: "none",
         lg: "lg",
       }}
+      bg={"white"}
     >
       <Box>
         <Heading textAlign="center" as="h1" fontSize="20px" pt="3.5rem">

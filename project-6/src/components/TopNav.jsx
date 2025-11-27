@@ -16,7 +16,7 @@ import { FaBars } from "react-icons/fa";
 
 const TopNav = ({ title, onOpen }) => {
   return (
-    <Box p={"4"}>
+    <Box p={"4"} bg="white">
       <HStack maxW={"70rem"} h="16" justify={"space-between"} mx={"auto"}>
         <Icon
           as={FaBars}
